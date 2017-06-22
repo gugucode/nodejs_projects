@@ -14,14 +14,10 @@ geoAddress = (address,callback) => {
         }else if(body.status === "ZERO_RESULTS"){
             callback("Unable to find the address");
         }else if(body.status === "OK"){
-            //console.log(`Address:${body.results[0].formatted_address}`);
-            //console.log(`Address:${body.results[0].geometry.location.lat}`);
-            //console.log(`Address:${body.results[0].geometry.location.lng}`);
             
             callback(undefined,{address:body.results[0].formatted_address,
                 lat:body.results[0].geometry.location.lat,
                 lng:body.results[0].geometry.location.lng});
-            //return obj;
         }  
     })
 
